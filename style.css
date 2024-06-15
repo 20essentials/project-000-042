@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: repeating-radial-gradient(circle, transparent, #84b32f);
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+
+  .box {
+    width: 330px;
+    height: 480px;
+    background-image: url(campo.avif);
+    background-position: center;
+    background-size: cover;
+    transition: 1s;
+    transform: rotateX(70deg);
+    transform-style: preserve-3d;
+    color: #000;
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100.5%;
+      height: 50px;
+      background-color: currentColor;
+      top: -1.5rem;
+      left: 0;
+      transform: rotateX(90deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100.3%;
+      height: 50px;
+      bottom: -1.5rem;
+      background-color: currentColor;
+      transform: rotateX(90deg);
+    }
+
+    .left {
+      height: 100%;
+      top: 0px;
+      background-color: currentColor;
+      position: absolute;
+      width: 50px;
+      left: -25px;
+      transform: rotateY(90deg);
+    }
+
+    .right {
+      height: 100%;
+      top: 0px;
+      background-color: currentColor;
+      position: absolute;
+      width: 50px;
+      right: -26px;
+      transform: rotateY(90deg);
+    }
+  }
+}
+
+@media (width <= 1200px) {
+  .center {
+    transform: translate(-50%, -50%) scale(.6);
+  }
+}
