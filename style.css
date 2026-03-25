@@ -6,6 +6,7 @@
 
 body {
   height: 100vh;
+  background-color: #eee;
   background-image: repeating-radial-gradient(circle, transparent, #84b32f);
 }
 
